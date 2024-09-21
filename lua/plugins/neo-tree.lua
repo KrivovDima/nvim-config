@@ -18,5 +18,8 @@ return {
 				end,
 			},
 		},
+		window = {
+			width = 70,
+		}
 	},
 }
