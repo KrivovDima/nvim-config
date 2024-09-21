@@ -22,3 +22,9 @@ vim.keymap.set('n', '<leader>e', ':Neotree left reveal toggle<CR>', { desc = "To
 keymap.set('n', '<A-l>', ':BufferLineCycleNext<CR>', { desc = "Go to next buffer" })
 keymap.set('n', '<A-h>', ':BufferLineCyclePrev<CR>', { desc = "Go to previous buffer" })
 keymap.set('n', '<c-x>', ':BufferLineCloseOthers<CR>', { desc = "Close other buffer" })
+
+-- eslint auto fix
+keymap.set('n', '<leader>lf', ':%!eslint_d --stdin --fix-to-stdout --stdin-filename %<CR>',
+	{ noremap = true, silent = true, desc = "eslint auto fix" })
+keymap.set('v', '<leader>lf', ':!eslint_d --stdin --fix-to-stdout<CR>',
+	{ noremap = true, silent = true, desc = "eslint auto fix" })

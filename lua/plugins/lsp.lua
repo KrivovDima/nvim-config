@@ -66,7 +66,7 @@ return {
         keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
 
 				        opts.desc = "Format lsp"
-				vim.keymap.set("n", "<Leader>lf", function()
+				vim.keymap.set("n", "<Leader>F", function()
 						vim.lsp.buf.format({ async = true })
 					end, opts)
       end,
