@@ -95,61 +95,35 @@ return {
 					capabilities = capabilities,
 				})
 			end,
-			["svelte"] = function()
-				-- configure svelte server
-				lspconfig["svelte"].setup({
-					capabilities = capabilities,
-					on_attach = function(client, bufnr)
-						vim.api.nvim_create_autocmd("BufWritePost", {
-							pattern = { "*.js", "*.ts" },
-							callback = function(ctx)
-								-- Here use ctx.match instead of ctx.file
-								client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
-							end,
-						})
-					end,
-				})
-			end,
-			-- ["ts_ls"] = function()
+			-- ["svelte"] = function()
 			-- 	-- configure svelte server
-			-- 	lspconfig["ts_ls"].setup({
-			-- 		codeActionsOnSave = {
-			-- 			source = {
-			-- 				organizeImports = true,
-			-- 				fixAll = true,
-			-- 				addMissingImports = true
-			-- 			},
-			-- 		},
+			-- 	lspconfig["svelte"].setup({
+			-- 		-- capabilities = capabilities,
 			-- 		on_attach = function(client, bufnr)
-			-- 			-- Это позволяет автоматическую организацию импортов
-			-- 			client.resolved_capabilities.document_formatting = false
-			-- 			client.resolved_capabilities.document_range_formatting = false
-			--
-			-- 			-- Установка ключевых привязок
-			-- 			local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-			-- 			local opts = { noremap = true, silent = true }
-			--
-			-- 			buf_set_keymap('n', '<leader>ri',
-			-- 				'<cmd>lua vim.lsp.buf.execute_command({ command = "_typescript.organizeImports", arguments = { vim.api.nvim_buf_get_name(0) } })<CR>',
-			-- 				opts)
+			-- 			vim.api.nvim_create_autocmd("BufWritePost", {
+			-- 				pattern = { "*.js", "*.ts" },
+			-- 				callback = function(ctx)
+			-- 					-- Here use ctx.match instead of ctx.file
+			-- 					client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
+			-- 				end,
+			-- 			})
 			-- 		end,
 			-- 	})
 			-- end,
-
-			["graphql"] = function()
-				-- configure graphql language server
-				lspconfig["graphql"].setup({
-					capabilities = capabilities,
-					filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
-				})
-			end,
-			["emmet_ls"] = function()
-				-- configure emmet language server
-				lspconfig["emmet_ls"].setup({
-					capabilities = capabilities,
-					filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-				})
-			end,
+			-- ["graphql"] = function()
+			-- 	-- configure graphql language server
+			-- 	lspconfig["graphql"].setup({
+			-- 		-- capabilities = capabilities,
+			-- 		filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
+			-- 	})
+			-- end,
+			-- ["emmet_ls"] = function()
+			-- 	-- configure emmet language server
+			-- 	lspconfig["emmet_ls"].setup({
+			-- 		-- capabilities = capabilities,
+			-- 		filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+			-- 	})
+			-- end,
 			["lua_ls"] = function()
 				-- configure lua server (with special settings)
 				lspconfig["lua_ls"].setup({
