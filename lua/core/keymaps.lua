@@ -22,6 +22,7 @@ vim.keymap.set('n', '<leader>e', ':Neotree left reveal toggle<CR>', { desc = "To
 keymap.set('n', '<Tab>', ':BufferLineCycleNext<CR>', { desc = "Go to next buffer" })
 keymap.set('n', '<s-Tab>', ':BufferLineCyclePrev<CR>', { desc = "Go to previous buffer" })
 keymap.set('n', '<c-x>', ':BufferLineCloseOthers<CR>', { desc = "Close other buffer" })
+keymap.set('n', '<leader>br', ':BufferLineCloseRight<CR>', { desc = "Close right buffer" })
 keymap.set('n', '<leader>bx', ':BufferLinePickClose<CR>')
 
 -- eslint auto fix
