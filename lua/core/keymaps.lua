@@ -26,7 +26,7 @@ keymap.set('n', '<leader>br', ':BufferLineCloseRight<CR>', { desc = "Close right
 keymap.set('n', '<leader>bx', ':BufferLinePickClose<CR>')
 
 -- eslint auto fix
-keymap.set('n', '<leader>lf', ':%!eslint_d --stdin --fix-to-stdout --stdin-filename %<CR>',
+keymap.set('n', '<leader>l', ':%!eslint_d --stdin --fix-to-stdout --stdin-filename %<CR>',
 	{ noremap = true, silent = true, desc = "eslint auto fix" })
-keymap.set('v', '<leader>lf', ':!eslint_d --stdin --fix-to-stdout<CR>',
+keymap.set('v', '<leader>l', ':!eslint_d --stdin --fix-to-stdout<CR>',
 	{ noremap = true, silent = true, desc = "eslint auto fix" })

@@ -37,5 +37,5 @@ api.nvim_create_autocmd("BufLeave", {
 	command = "silent! :wa",
 })
 
--- turn off swapfile
+-- turn off swap file
 opt.swapfile = false
