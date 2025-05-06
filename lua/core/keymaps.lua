@@ -16,7 +16,7 @@ keymap.set('n', '\\', ':split<CR>', { desc = "Split window horizontally" })
 keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" })
 
 -- neo-tree
-vim.keymap.set('n', '<leader>e', ':Neotree left reveal toggle<CR>', { desc = "Toggle file explorer" })
+keymap.set('n', '<leader>e', ':Neotree left reveal toggle<CR>', { desc = "Toggle file explorer" })
 
 -- tabs
 keymap.set('n', '<Tab>', ':BufferLineCycleNext<CR>', { desc = "Go to next buffer" })
@@ -30,3 +30,9 @@ keymap.set('n', '<leader>l', ':%!eslint_d --stdin --fix-to-stdout --stdin-filena
 	{ noremap = true, silent = true, desc = "eslint auto fix" })
 keymap.set('v', '<leader>l', ':!eslint_d --stdin --fix-to-stdout<CR>',
 	{ noremap = true, silent = true, desc = "eslint auto fix" })
+
+
+keymap.set('n', '<leader>sf', function()
+  vim.cmd('!stylelint % --fix')
+  vim.cmd('edit') -- обновляет файл после автофикса
+end, { desc = 'Stylelint auto fix current file' })
